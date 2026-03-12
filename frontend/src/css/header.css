@@ -1,0 +1,42 @@
+#header {
+    background-color: #051732;
+    height: 4.5rem;
+}
+
+#header nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+#header button:last-of-type {
+    margin-right: 4rem;
+}
+
+#header button:not(:last-of-type) {
+    margin-right: 1.5rem;
+}
+
+#header button {
+    cursor: pointer;
+
+    height: 2.5rem;
+    width: 6rem;
+    background-color: transparent;
+    color: #f0f0f0;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#header button.active {
+    background-color: #f0f0f0;
+    border-radius: 50px;
+    color: black;
+}
+
+#header button:hover:not(.active) {
+    background-color: rgba(240, 240, 240, 0.1); 
+    border-radius: 50px;
+}

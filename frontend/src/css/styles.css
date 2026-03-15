@@ -1,5 +1,22 @@
-body {
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
     margin: 0;
     padding:0;
     background-color: #01223C;
+    scrollbar-width: thin;
+}
+
+body {
+    min-height: 1vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    overflow-y: auto;
 }

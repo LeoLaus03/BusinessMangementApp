@@ -1,10 +1,12 @@
 import { getHeaderPage } from "./pages/header.js";
 import { getRechnungPage } from "./pages/mainPages/Rechnung.js";
 import { getKundenPage } from "./pages/mainPages/Kunden.js";
+import { getKundenEingabePage } from "./pages/mainPages/KundenEingabe.js";
 
 const pageRegister = {
     "Rechnung": getRechnungPage,
-    "Kunden": getKundenPage
+    "Kunden": getKundenPage,
+    "KundenEingabe": getKundenEingabePage
 }
 
 function initApp() {
@@ -28,10 +30,11 @@ window.showPage = function(pageName) {
 
     if(pageFunction) {
         mainElement.innerHTML = pageFunction();
+        for (let c of mainElement.classList) mainElement.classList.remove(c);
+        mainElement.classList.add(pageName);
+        if (pageName == "KundenEingabe") pageName = "Kunden";
         let headerButton = document.querySelector(`#header button.${pageName}`);
-        for (let e of document.getElementsByClassName("active")) {
-            e.classList.remove("active");
-        }
+        for (let e of document.getElementsByClassName("active")) e.classList.remove("active");
         headerButton.classList.add("active");
     } else {
         console.error("Seite nicht im Register gefunden:", pageName);

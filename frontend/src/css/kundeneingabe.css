@@ -1,0 +1,236 @@
+main.KundenEingabe {
+    .mainBox {
+        display: flex;
+        flex-direction: column;
+
+        min-height: calc(100% - 10rem);
+        width: calc(100% - 15rem);
+        margin: 5rem 7.5rem;
+
+        background-color: #051732;
+        border-radius: 30px;
+        border: 2px solid #5d13fe;
+        box-shadow: 
+        inset 1px 1px 1px rgba(255,255,255,0.1),
+
+        0 0 25px rgba(93, 19, 254, 0.2),
+        
+        -1px -1px 5px rgba(188, 19, 254, 0.2),
+        
+        2px 2px 2px 0px rgba(86, 19, 254, 0.75), 
+        7px 7px 5px 0px rgba(113, 19, 254, 0.7),
+        12px 12px 20px 0px rgba(86, 19, 254, 0.3);
+
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .inputBox {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .column {
+        height: auto;
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2rem 1rem;
+        padding: 2rem;
+        
+        align-content: start;
+        position: relative;
+    }
+
+    .columnLeft::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;     /* Startet etwas unterhalb der Oberkante */
+        height: 100%;  /* Geht nicht über die volle Höhe, wirkt dadurch eleganter */
+        width: 1px;   /* Die Dicke der Linie */
+        
+        background: linear-gradient(
+        to bottom, 
+        transparent, 
+        rgba(93, 19, 254, 0.8), /* Dein neues Lila als Zentrum */
+        transparent
+    );
+    
+    /* Der Glow passend zum neuen Farbton */
+    box-shadow: 0 0 10px rgba(93, 19, 254, 0.5);
+    }
+
+    .textArea {
+        display: flex;
+        width: 100%;
+        /* Füllt den restlichen Platz in der .mainBox aus */
+        flex: 1; 
+        padding: 2rem;
+        padding-top: 0;
+        /* Verhindert das Kollabieren */
+        min-height: 200px; 
+    }
+
+    .textArea .customTextArea {
+        display: flex;
+        width: 100%;
+        flex: 1;
+    }
+
+    .textArea textarea {
+        width: 100%;
+        /* Startet bei 100% der verfügbaren Fläche */
+        height: 100%; 
+        min-height: 100px;
+        
+        /* Deaktiviert das manuelle Ziehen */
+        resize: none; 
+        
+        /* Wichtig für JS-Auto-Grow, verhindert doppelte Scrollbars */
+        overflow-y: hidden; 
+        display: block;
+
+        box-sizing: border-box;
+    }
+
+    .submitButton {
+        display: flex;
+        justify-content: right;
+        padding: 2rem;
+        padding-top: 0;
+    }
+
+    .submitButton button {
+        height: 3.5rem;
+        width: 10rem;
+        background-color: transparent;
+        color: #5d13fe;
+        
+        font-weight: 800;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        
+        cursor: pointer;
+        border-radius: 15px;
+        outline: none;
+
+        border: 2px solid #5d13fe;
+        
+        -webkit-text-stroke: 1px #5d13fe; 
+        
+        box-shadow: 0 0 15px rgba(93, 19, 254, 0.2);
+        
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+    }
+
+    /* Hover-Zustand: Der Button "füllt" sich mit Energie */
+    .submitButton button:hover {
+        background-color: #5d13fe;
+        color: #f0f0f0;                  /* Schrift wird vollflächig weiß */
+        -webkit-text-stroke: 0px transparent; /* Outline verschwindet */
+        
+        box-shadow: 
+            0 0 25px rgba(93, 19, 254, 0.6),
+            0 0 50px rgba(93, 19, 254, 0.3);
+        
+        transform: translateY(-3px);   /* Schwebt etwas höher */
+    }
+
+    /* Klick-Effekt */
+    .submitButton button:active {
+        transform: translateY(1px);
+        box-shadow: 0 0 10px rgba(93, 19, 254, 0.5);
+    }
+}
+
+@media (max-width: 1200px) {
+    main.KundenEingabe {
+        .mainBox {
+            margin: 5rem auto;
+            width: 960px;
+        }
+
+        .textArea {
+            min-height: 100px;
+        }
+
+        .textArea textarea {
+            min-height: 100px;
+        }
+
+        .columnLeft::after {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 980px) {
+    main.KundenEingabe {
+        .mainBox {
+            width: 100%;
+            height: auto;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .column {
+            padding: 2.5rem;
+        }
+
+        .inputBox {
+            flex-direction: column;
+        }
+
+        .columnLeft {
+            padding-bottom: 2rem;
+        }
+
+        .columnRight {
+            padding-top: 2rem;
+        }
+
+        .columnLeft::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            right: 5%;
+            
+            height: 1px;   
+            width: auto;   
+
+            background: linear-gradient(
+                to right, 
+                transparent, 
+                rgba(188, 19, 254, 0.8), 
+                transparent
+            );
+            box-shadow: 0 0 8px rgba(188, 19, 254, 0.4);
+        }
+    }
+
+    header:has(+ main.KundenEingabe) {
+        /* Ein Mix aus hartem Umgebungsschatten und einem tiefblauen Schimmer */
+        box-shadow: 
+            0 10px 30px rgba(0, 0, 0, 0.7),            /* Der eigentliche Schatten */
+            0 4px 20px rgba(5, 23, 50, 0.6);          /* Dunkelblaues Leuchten passend zum BG */
+        
+        background: rgba(5, 23, 50, 0.85);            /* Leicht transparent für den Blur */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Fast unsichtbare Kante für Realismus */
+        z-index: 2;
+        position: relative; /* Sicherstellen, dass der Schatten über der Box liegt */
+    }
+
+    .textArea textarea {
+        min-height: 30px;
+    }
+}
+    

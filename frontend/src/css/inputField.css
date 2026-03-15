@@ -1,0 +1,59 @@
+/*=== INPUT FIELD ===*/
+
+.customInputField, .customTextArea {
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.customTextArea textarea {
+    width: 100%;
+}
+
+.customInputField, .customTextArea {
+    .inputLabel {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+
+        margin: 0 10px;
+        padding: 0 3px;
+
+        background-color: #051732;
+
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .inputField {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        border-radius: 12px;
+        padding: 0.8rem;
+        color: white;
+        font-size: 1rem;
+        outline: none;
+    }
+
+    .inputField:focus {
+        border-color: #5d13fe;
+        background: rgba(93, 19, 254, 0.08);
+        box-shadow: 0 0 15px rgba(188, 19, 254, 0.4);
+        outline: none;
+        box-shadow: 
+        0 0 12px rgba(93, 19, 254, 0.4),
+        inset 0 0 5px rgba(93, 19, 254, 0.2);
+    }
+
+    .inputField:focus + .inputLabel {
+        color: #5d13fe;
+    }
+
+    .inputField::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+    }
+}

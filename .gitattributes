@@ -1,0 +1,6 @@
+# Ignoriere alle NSIS-Dateien für die Statistik
+*.nsi linguist-detectable=false
+*.nsh linguist-detectable=false
+
+# Oder ignoriere einen ganzen Ordner (z.B. build)
+build/** linguist-vendored

@@ -23,9 +23,10 @@
         background-color: #051732;
 
         color: rgba(255, 255, 255, 0.5);
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         font-weight: 500;
         text-transform: uppercase;
+        letter-spacing: 0.1rem;
     }
 
     .inputField {
@@ -41,12 +42,9 @@
 
     .inputField:focus {
         border-color: #5d13fe;
-        background: rgba(93, 19, 254, 0.08);
-        box-shadow: 0 0 15px rgba(188, 19, 254, 0.4);
-        outline: none;
         box-shadow: 
-        0 0 12px rgba(93, 19, 254, 0.4),
-        inset 0 0 5px rgba(93, 19, 254, 0.2);
+            0 0 12px rgba(93, 19, 254, 0.4),
+            inset 0 0 5px rgba(93, 19, 254, 0.2);
     }
 
     .inputField:focus + .inputLabel {

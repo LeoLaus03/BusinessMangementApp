@@ -11,15 +11,15 @@ main.KundenEingabe {
         border-radius: 30px;
         border: 2px solid #5d13fe;
         box-shadow: 
-        inset 1px 1px 1px rgba(255,255,255,0.1),
+            inset 1px 1px 1px rgba(255,255,255,0.1),
 
-        0 0 25px rgba(93, 19, 254, 0.2),
-        
-        -1px -1px 5px rgba(188, 19, 254, 0.2),
-        
-        2px 2px 2px 0px rgba(86, 19, 254, 0.75), 
-        7px 7px 5px 0px rgba(113, 19, 254, 0.7),
-        12px 12px 20px 0px rgba(86, 19, 254, 0.3);
+            0 0 25px rgba(93, 19, 254, 0.2),
+            
+            -1px -1px 5px rgba(188, 19, 254, 0.2),
+            
+            2px 2px 2px 0px rgba(86, 19, 254, 0.75), 
+            7px 7px 5px 0px rgba(113, 19, 254, 0.7),
+            12px 12px 20px 0px rgba(86, 19, 254, 0.3);
 
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
